@@ -3,10 +3,6 @@
  # Project Name: TensorflowTest2
 '''
 
-'''
- # Created by DahyeYoon on 5/18/16 at 16:20
- # Project Name: TensorflowTest2
-'''
 
 import tensorflow as tf
 
