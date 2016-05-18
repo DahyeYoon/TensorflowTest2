@@ -22,7 +22,7 @@ hypothesis = w*X
 # cost ==> sum{(H(x)-y<target value>)^2}/m : operation
 cost = tf.reduce_mean(tf.square(hypothesis-Y))
 
-# Minimize
+# Minimize using gradient descent
 descent = w- tf.mul(0.1, tf.reduce_mean(tf.mul((tf.mul(w, X)-Y), X)))
 update = w.assign(descent)
 
@@ -39,5 +39,3 @@ sess.run(init)  # initialization run
 for step in xrange(100):  # Repeat 20 times
     sess.run(update, feed_dict={X:x_data, Y:y_data})  # cost minimization run
     print step, sess.run(cost, feed_dict={X:x_data, Y:y_data}), sess.run(w)
-
-

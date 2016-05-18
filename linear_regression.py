@@ -18,7 +18,7 @@ hypothesis = w*x_data +b
 # cost ==> sum{(H(x)-y<target value>)^2}/m : operation
 cost = tf.reduce_mean(tf.square(hypothesis-y_data))
 
-# Minimize cost using gradient descent algorithm
+# Minimize cost
 a = tf.Variable(0.1)  # Learning rate (alpha)
 optimizer = tf.train.GradientDescentOptimizer(a)
 train = optimizer.minimize(cost)
