@@ -7,8 +7,8 @@
 import tensorflow as tf
 
 # training data
-x_data = [1, 2, 3]
-y_data = [1, 2, 3]
+x_data = [1., 2., 3.]
+y_data = [1., 2., 3.]
 
 # weight = random value
 w = tf.Variable(tf.random_uniform([1], -10, 10))
@@ -24,18 +24,18 @@ cost = tf.reduce_mean(tf.square(hypothesis-Y))
 
 # Minimize using gradient descent
 descent = w- tf.mul(0.1, tf.reduce_mean(tf.mul((tf.mul(w, X)-Y), X)))
-update = w.assign(descent)
+update = w.assign(descent)  # operation. This cannot running
 
 
-# Variables(w, b) must be initialize before starting.
+# Variables(w) must be initialize before starting.
 init = tf.initialize_all_variables()
 
 # Launch the graph
 sess = tf.Session()
-sess.run(init)  # initialization run
+sess.run(init)  # run initialization
 
 
 #  Fitting the line
-for step in xrange(100):  # Repeat 20 times
-    sess.run(update, feed_dict={X:x_data, Y:y_data})  # cost minimization run
-    print step, sess.run(cost, feed_dict={X:x_data, Y:y_data}), sess.run(w)
+for step in xrange(100):  # Repeat 100 times
+    sess.run(update, feed_dict={X: x_data, Y: y_data})  # run update
+    print step, sess.run(cost, feed_dict={X: x_data, Y: y_data}), sess.run(w)  # minimize cost

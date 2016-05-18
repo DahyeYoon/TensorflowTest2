@@ -23,7 +23,7 @@ hypothesis = tf.mul(X, w)
 cost = tf.reduce_mean(tf.pow(hypothesis-Y, 2))/(m)
 
 
-# Variables(w, b) must be initialize before starting.
+# Variables(w) must be initialize before starting.
 init = tf.initialize_all_variables()
 
 # For graphs

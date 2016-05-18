@@ -39,9 +39,9 @@ sess.run(init)  # initialization run
 for step in xrange(2001):  # Repeat 2001 times
     sess.run(train, feed_dict={X:x_data, Y:y_data})  # cost minimization run
     if step % 20 == 0:  # Print every 20 time
-        print step, sess.run(cost, feed_dict={X:x_data, Y:y_data}), sess.run(w), sess.run(b)
+        print step, sess.run(cost, feed_dict={X: x_data, Y: y_data}), sess.run(w), sess.run(b)
 
         # When placeholder is used, can predict cost for new data with estimated hypothesis
-        print sess.run(hypothesis, feed_dict={X:5})
-        print sess.run(hypothesis, feed_dict={X:2.5})
+        print sess.run(hypothesis, feed_dict={X: 5})
+        print sess.run(hypothesis, feed_dict={X: 2.5})
 
