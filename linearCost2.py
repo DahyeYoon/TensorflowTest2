@@ -23,7 +23,7 @@ hypothesis = w*X
 cost = tf.reduce_mean(tf.square(hypothesis-Y))
 
 # Minimize using gradient descent
-descent = w- tf.mul(0.1, tf.reduce_mean(tf.mul((tf.mul(w, X)-Y), X)))
+descent = w - tf.mul(0.1, tf.reduce_mean(tf.mul((tf.mul(w, X)-Y), X)))
 update = w.assign(descent)  # operation. This cannot running
 
 
